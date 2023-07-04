@@ -1,0 +1,16 @@
+# For SBT Scalac Options
+# 检查所有引入但未使用的内容
+# 检查所有声明但可能没起到作用的值
+scalacOptions ++= Seq(
+  "-Wunused:all",
+  "-Wvalue-discard"
+),
+# 为每个 scala 文件预先导入以下内容
+scalacOptions += Seq(
+  "java.lang",
+  "scala",
+  "scala.Predef",
+  "scala.annotation",
+  "scala.util.chaining",
+  "zio"
+).mkString(start = "-Yimports:", sep = ",", end = "")
