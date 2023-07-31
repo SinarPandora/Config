@@ -1,9 +1,15 @@
 # For SBT Scalac Options
 # 检查所有引入但未使用的内容
 # 检查所有声明但可能没起到作用的值
+# 检查所有弃用符号的使用
+# 检查模式匹配是否全覆盖
 scalacOptions ++= Seq(
   "-Wunused:all",
-  "-Wvalue-discard"
+  "-Wvalue-discard",
+  "-deprecation",
+  "-Ycheck-all-patmat",
+  // "-Yexplicit-nulls",
+  // "-Werror"
 ),
 # 为每个 scala 文件预先导入以下内容
 scalacOptions += Seq(
