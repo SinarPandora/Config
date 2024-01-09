@@ -33,6 +33,9 @@ Plug 'tpope/vim-commentary'
 "" Map \b to toggle the breakpoint on the current line
 "map \b <Action>(ToggleLineBreakpoint)
 
+" Use relative line number
+set relativenumber
+
 " Use Which-key and disable the timeout option
 set which-key
 set notimeout
